@@ -5,81 +5,66 @@ import { Calendar } from "lucide-react";
 import BottomNavBar from "@/components/layout/bottomNavBar";
 
 export default function HomePage() {
-  const tasks = [
+  const schedules = [
     {
-      title: "Candidate Management",
-      project: "Zoho Project",
-      teammates: [
+      title: "Persiapan Acara Pernikahan",
+      project: "Wedding Event - Hotel Santika",
+      team: [
         "https://i.pravatar.cc/40?img=1",
         "https://i.pravatar.cc/40?img=2",
         "https://i.pravatar.cc/40?img=3",
       ],
-      dueDate: "June 6, 2022",
-      progress: 88,
+      date: "24 Oktober 2025",
+      progress: 90,
     },
     {
-      title: "Candidate Management",
-      project: "hrSense Project",
-      teammates: [
+      title: "Dekorasi dan Sound System",
+      project: "Konser Amal - Stadion Jati",
+      team: [
         "https://i.pravatar.cc/40?img=4",
         "https://i.pravatar.cc/40?img=5",
         "https://i.pravatar.cc/40?img=6",
       ],
-      dueDate: "June 6, 2022",
-      progress: 88,
+      date: "25 Oktober 2025",
+      progress: 75,
     },
-  ];
-
-  const dates = [
-    { day: "Mon", date: "4" },
-    { day: "Tue", date: "5" },
-    { day: "Wed", date: "6" },
-    { day: "Thr", date: "7" },
-    { day: "Fri", date: "8" },
+    {
+      title: "Koordinasi Vendor dan Catering",
+      project: "Festival Kuliner Pati",
+      team: [
+        "https://i.pravatar.cc/40?img=7",
+        "https://i.pravatar.cc/40?img=8",
+        "https://i.pravatar.cc/40?img=9",
+      ],
+      date: "27 Oktober 2025",
+      progress: 60,
+    },
   ];
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-blue-500 text-white p-6 rounded-b-3xl">
-        <p className="text-sm"> Selamat Bekerja!</p>
-        <h1 className="text-2xl font-bold">Budi Irawan</h1>
+        <p className="text-sm">Selamat Bekerja!</p>
+        <h1 className="text-2xl font-bold">Tim Event Organizer</h1>
       </div>
 
-      {/* Select date */}
-      <div className="px-6 mt-4">
-        <p className="text-gray-700 font-semibold mb-3">Pilih Tanggal</p>
-        <div className="flex space-x-3 overflow-x-auto">
-          {dates.map((d, i) => (
-            <div
-              key={i}
-              className={`flex flex-col items-center justify-center rounded-2xl px-4 py-2 min-w-[60px] ${
-                i === 0 ? "bg-blue-500 text-white" : "bg-gray-100 text-gray-700"
-              }`}
-            >
-              <p className="text-sm font-medium">{d.day}</p>
-              <p className="text-lg font-bold">{d.date}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Ongoing tasks */}
+      {/* Jadwal kerja */}
       <div className="px-6 mt-6 flex-1">
-        <p className="text-gray-700 font-semibold mb-3">
-          Tugas yang sedang berlangsung
-        </p>
+        <p className="text-gray-700 font-semibold mb-3">Jadwal Pekerjaan</p>
+
         <div className="space-y-4">
-          {tasks.map((task, i) => (
+          {schedules.map((job, i) => (
             <div
               key={i}
               className="bg-white p-4 rounded-2xl shadow flex flex-col sm:flex-row sm:items-center sm:justify-between"
             >
               <div>
-                <h3 className="font-semibold text-gray-800">{task.title}</h3>
-                <p className="text-sm text-gray-500">For - {task.project}</p>
+                <h3 className="font-semibold text-gray-800">{job.title}</h3>
+                <p className="text-sm text-gray-500">Proyek - {job.project}</p>
+
                 <div className="flex items-center mt-3 space-x-2">
-                  {task.teammates.slice(0, 2).map((src, j) => (
+                  {job.team.slice(0, 2).map((src, j) => (
                     <img
                       key={j}
                       src={src}
@@ -91,13 +76,15 @@ export default function HomePage() {
                     +3
                   </span>
                 </div>
+
                 <div className="flex items-center mt-3 text-sm text-gray-600">
                   <Calendar className="w-4 h-4 mr-1" />
-                  {task.dueDate}
+                  {job.date}
                 </div>
               </div>
+
               {/* Progress circle */}
-              <div className="mt-4 sm:mt-0">
+              {/* <div className="mt-4 sm:mt-0">
                 <div className="relative w-16 h-16">
                   <svg className="w-full h-full -rotate-90">
                     <circle
@@ -116,7 +103,7 @@ export default function HomePage() {
                       strokeWidth="6"
                       strokeDasharray={2 * Math.PI * 28}
                       strokeDashoffset={
-                        2 * Math.PI * 28 * (1 - task.progress / 100)
+                        2 * Math.PI * 28 * (1 - job.progress / 100)
                       }
                       fill="transparent"
                       strokeLinecap="round"
@@ -124,11 +111,11 @@ export default function HomePage() {
                   </svg>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-sm font-semibold text-gray-700">
-                      {task.progress}%
+                      {job.progress}%
                     </span>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

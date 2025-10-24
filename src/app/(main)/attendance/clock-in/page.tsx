@@ -1,7 +1,7 @@
 // app/(main)/attendance/clock-in/page.tsx
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -32,13 +32,16 @@ export default function ClockInPage() {
       });
       setStream(mediaStream);
       setShowCamera(true);
-      if (videoRef.current) {
-        videoRef.current.srcObject = mediaStream;
-      }
     } catch (error) {
       console.error("Camera access denied:", error);
     }
   };
+
+  useEffect(() => {
+    if (showCamera && videoRef.current && stream) {
+      videoRef.current.srcObject = stream;
+    }
+  }, [showCamera, stream]);
 
   const handleTakePhoto = () => {
     if (videoRef.current && canvasRef.current) {

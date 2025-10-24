@@ -48,7 +48,7 @@ export default function ProfilePage() {
                 <label className="text-sm font-medium text-gray-600">
                   Full Name
                 </label>
-                <Input defaultValue="Jacob Jones" className="mt-1" />
+                <Input defaultValue="Budi Irawan" className="mt-1" readOnly />
               </div>
 
               {/* Tanggal Lahir */}
@@ -56,7 +56,12 @@ export default function ProfilePage() {
                 <label className="text-sm font-medium text-gray-600">
                   Tanggal Lahir
                 </label>
-                <Input type="date" defaultValue="2000-01-01" className="mt-1" />
+                <Input
+                  type="date"
+                  defaultValue="2000-01-01"
+                  className="mt-1"
+                  readOnly
+                />
               </div>
 
               {/* Posisi */}
@@ -64,7 +69,7 @@ export default function ProfilePage() {
                 <label className="text-sm font-medium text-gray-600">
                   Posisi
                 </label>
-                <Input defaultValue="Pekerja" className="mt-1" />
+                <Input defaultValue="Pekerja" className="mt-1" readOnly />
               </div>
 
               {/* No HP */}
@@ -72,7 +77,11 @@ export default function ProfilePage() {
                 <label className="text-sm font-medium text-gray-600">
                   No HP
                 </label>
-                <Input defaultValue="+62 812 3456 7890" className="mt-1" />
+                <Input
+                  defaultValue="+62 812 3456 7890"
+                  className="mt-1"
+                  readOnly
+                />
               </div>
 
               {/* Logout Button */}
