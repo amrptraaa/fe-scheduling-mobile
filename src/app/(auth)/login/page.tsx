@@ -34,8 +34,7 @@ export default function LoginPage() {
     <div className="flex flex-col w-full max-w-md">
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800">Welcome Back</h1>
-        <p className="text-gray-500">Login to your account</p>
+        <h1 className="text-3xl font-bold text-gray-800">Selamat datang!</h1>
       </div>
 
       {/* Form */}
@@ -56,7 +55,7 @@ export default function LoginPage() {
               onChange={(e) => setEmail(e.target.value)}
               disabled={isLoading}
               required
-              style={{ color: '#111827' }}
+              style={{ color: "#111827" }}
             />
           </div>
 
@@ -75,7 +74,7 @@ export default function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               disabled={isLoading}
               required
-              style={{ color: '#111827' }}
+              style={{ color: "#111827" }}
             />
           </div>
 
@@ -94,9 +93,7 @@ export default function LoginPage() {
                 Remember me
               </label>
             </div>
-            <div className="text-sm">
-              
-            </div>
+            <div className="text-sm"></div>
           </div>
 
           <div>
