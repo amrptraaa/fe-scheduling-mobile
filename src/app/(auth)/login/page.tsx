@@ -35,7 +35,7 @@ export default function LoginPage() {
     <div
       className="relative min-h-screen w-full flex items-center justify-center overflow-hidden"
       style={{
-        background: `linear-gradient(to bottom right, #CDF463 0%, #e6f8b5 40%, #f9fafb 100%)`,
+        background: `linear-gradient(to bottom right, #f9fafb 0%, #039155 100%)`,
       }}
     >
       {/* Particles Layer */}
@@ -57,7 +57,7 @@ export default function LoginPage() {
         <div className="absolute inset-0 z-50 flex items-center justify-center bg-white/60 backdrop-blur-sm">
           <div className="flex flex-col items-center">
             <svg
-              className="animate-spin h-10 w-10 text-[#CDF463]"
+              className="animate-spin h-10 w-10 text-[#039155]"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -123,7 +123,7 @@ export default function LoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={isLoading}
                 required
-                className="w-full py-2 sm:py-3 px-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CDF463] focus:border-transparent outline-none transition text-sm sm:text-base"
+                className="w-full py-2 sm:py-3 px-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#039155] focus:border-transparent outline-none transition text-sm sm:text-base"
                 style={{ color: "#111827" }}
               />
             </div>
@@ -143,7 +143,7 @@ export default function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 disabled={isLoading}
                 required
-                className="w-full py-2 sm:py-3 px-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CDF463] focus:border-transparent outline-none transition text-sm sm:text-base"
+                className="w-full py-2 sm:py-3 px-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#039155] focus:border-transparent outline-none transition text-sm sm:text-base"
                 style={{ color: "#111827" }}
               />
             </div>
@@ -154,7 +154,7 @@ export default function LoginPage() {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                className="w-4 h-4 text-[#CDF463] bg-gray-100 border-gray-300 rounded focus:ring-[#CDF463] focus:ring-2"
+                className="w-4 h-4 text-[#039155] bg-gray-100 border-gray-300 rounded focus:ring-[#039155] focus:ring-2"
               />
               <label
                 htmlFor="remember-me"
@@ -173,7 +173,7 @@ export default function LoginPage() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-[#CDF463] text-black font-semibold py-3 px-4 rounded-lg text-base border border-black/20 transition hover:bg-[#b5da55] shadow-sm"
+              className="w-full bg-[#039155] text-white font-semibold py-3 px-4 rounded-lg text-base border border-black/20 transition hover:bg-[#28A771] shadow-sm"
             >
               Masuk
             </Button>

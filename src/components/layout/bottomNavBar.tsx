@@ -25,7 +25,7 @@ const BottomNavBar = () => {
             key={idx}
             onClick={() => router.push(item.href)}
             className={`flex flex-col items-center ${
-              isActive ? "text-black-500" : "text-gray-500"
+              isActive ? "text-[#039155]" : "text-gray-500"
             }`}
           >
             <Icon className={idx === 1 ? "w-10 h-10" : "w-6 h-6"} />

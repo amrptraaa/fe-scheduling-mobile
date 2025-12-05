@@ -27,29 +27,31 @@ const AttendancePage = () => {
   });
 
   const attendanceHistory = [
-    { date: "Mon, 18 April 2023", time: "08:00 - 05:00 PM", late: false },
-    { date: "Fri, 15 April 2023", time: "08:52 - 05:00 PM", late: true },
-    { date: "Thu, 14 April 2023", time: "07:45 - 05:00 PM", late: false },
-    { date: "Wed, 13 April 2023", time: "07:55 - 05:00 PM", late: false },
-    { date: "Tue, 12 April 2023", time: "08:48 - 05:00 PM", late: true },
-    { date: "Mon, 11 April 2023", time: "07:52 - 05:00 PM", late: false },
+    { date: "Mon, 27 Oktober 2025", time: "08:00 - 05:00 PM", late: false },
   ];
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-blue-500 text-white p-6 rounded-b-2xl shadow-md flex items-center gap-4">
+      <div
+        className="text-white p-6 rounded-b-2xl shadow-md flex items-center gap-4"
+        style={{ backgroundColor: "#039155", color: "#1a1a1a" }}
+      >
         {/* Tombol Back */}
         <button
           onClick={() => router.push("/home")}
-          className="p-2 rounded-full hover:bg-blue-600"
+          className="p-2 rounded-full transition"
+          style={{
+            backgroundColor: "#039155",
+            color: "white",
+          }}
         >
           <ArrowLeft className="w-5 h-5" />
         </button>
 
         <div>
-          <h2 className="font-semibold">Budi Irawan</h2>
-          <p className="text-sm">Pekerja</p>
+          <h2 className="font-semibold text-white">Budi Irawan</h2>
+          <p className="text-sm text-white">Pekerja</p>
         </div>
       </div>
 
@@ -70,13 +72,19 @@ const AttendancePage = () => {
           <div className="flex justify-center gap-4 mt-4">
             <button
               onClick={() => router.push("/attendance/clock-in")}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg shadow"
+              className="text-white px-4 py-2 rounded-lg shadow transition"
+              style={{
+                backgroundColor: "#039155",
+              }}
             >
               Masuk
             </button>
             <button
               onClick={() => router.push("/attendance/clock-out")}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg shadow"
+              className="text-white px-4 py-2 rounded-lg shadow transition"
+              style={{
+                backgroundColor: "#039155",
+              }}
             >
               Keluar
             </button>

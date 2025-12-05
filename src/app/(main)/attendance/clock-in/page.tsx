@@ -1,4 +1,3 @@
-// app/(main)/attendance/clock-in/page.tsx
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -28,7 +27,7 @@ export default function ClockInPage() {
   const handleOpenCamera = async () => {
     try {
       const mediaStream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: "user" }, // Kamera depan
+        video: { facingMode: "user" },
       });
       setStream(mediaStream);
       setShowCamera(true);
@@ -55,7 +54,6 @@ export default function ClockInPage() {
         const imageData = canvas.toDataURL("image/png");
         setPhoto(imageData);
       }
-      // Matikan kamera setelah ambil foto
       if (stream) {
         stream.getTracks().forEach((track) => track.stop());
       }
@@ -66,13 +64,16 @@ export default function ClockInPage() {
 
   const handleSuccessOk = () => {
     setShowSuccess(false);
-    router.push("/home"); // arahkan ke home
+    router.push("/home");
   };
 
   return (
     <div className="flex flex-col items-center w-full min-h-screen bg-gray-100">
       {/* Header Section */}
-      <div className="w-full h-[180px] bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center text-white font-semibold text-2xl">
+      <div
+        className="w-full h-[180px] flex items-center justify-center text-white font-semibold text-2xl"
+        style={{ backgroundColor: "#039155" }}
+      >
         Clock In
       </div>
 
@@ -80,7 +81,10 @@ export default function ClockInPage() {
       <div className="w-full max-w-md -mt-8 px-4">
         <Card className="shadow-xl rounded-2xl">
           <CardContent className="p-6 flex flex-col gap-4">
-            <h2 className="text-center font-medium text-blue-600">
+            <h2
+              className="text-center font-medium"
+              style={{ color: "#039155" }}
+            >
               Ambil Selfie untuk Absen
             </h2>
 
@@ -97,7 +101,8 @@ export default function ClockInPage() {
 
             <Button
               onClick={handleOpenCamera}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl"
+              className="w-full text-white rounded-xl transition"
+              style={{ backgroundColor: "#039155" }}
             >
               <Camera className="mr-2 h-4 w-4" />
               Buka Kamera
@@ -135,7 +140,8 @@ export default function ClockInPage() {
             <canvas ref={canvasRef} className="hidden" />
             <Button
               onClick={handleTakePhoto}
-              className="bg-green-600 hover:bg-green-700 text-white rounded-xl"
+              className="text-white rounded-xl transition"
+              style={{ backgroundColor: "#039155" }}
             >
               Ambil Selfie
             </Button>
@@ -162,7 +168,8 @@ export default function ClockInPage() {
           <DialogFooter>
             <Button
               onClick={handleSuccessOk}
-              className="bg-blue-600 text-white rounded-xl"
+              className="text-white rounded-xl transition"
+              style={{ backgroundColor: "#039155" }}
             >
               Oke
             </Button>

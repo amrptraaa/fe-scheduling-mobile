@@ -42,8 +42,8 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Header */}
       <div
-        className="text-gray-900 p-6 rounded-b-3xl shadow-md"
-        style={{ backgroundColor: "#CDF463" }}
+        className="text-white p-6 rounded-b-3xl shadow-md"
+        style={{ backgroundColor: "#039155" }}
       >
         <p className="text-sm opacity-90">Selamat Bekerja!</p>
         <h1 className="text-2xl font-bold tracking-tight mt-1">
@@ -87,7 +87,7 @@ export default function HomePage() {
                   </div>
 
                   <div className="flex items-center mt-3 text-sm text-gray-600">
-                    <Calendar className="w-4 h-4 mr-2 text-lime-600" />
+                    <Calendar className="w-4 h-4 mr-2 text-[#039155]" />
                     {job.date}
                   </div>
                 </div>

@@ -13,9 +13,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={isLoading || props.disabled}
         className={cn(
-          "w-full px-4 py-3 font-semibold text-white bg-blue-500 rounded-xl",
-          "hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
-          "transition duration-200 disabled:bg-blue-300 disabled:cursor-not-allowed",
+          "w-full px-4 py-3 font-semibold text-white rounded-xl",
+          "bg-[#039155]",
+          "hover:bg-[#28A771]",
+          "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#039155]",
+          "transition duration-200 disabled:bg-opacity-50 disabled:cursor-not-allowed",
           className
         )}
         {...props}
