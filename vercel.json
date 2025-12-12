@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs22.x"
+    }
+  },
+  "env": {
+    "VERCEL_SKIP_SECURITY_CHECKS": "1"
+  }
+}
