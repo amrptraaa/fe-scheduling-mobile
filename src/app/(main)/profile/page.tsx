@@ -21,6 +21,7 @@ import api from "@/lib/axios";
 type UserType = {
   id: number;
   nama: string;
+  email?: string;
   no_hp?: string;
   jabatan?: string;
   foto_profil?: string;
@@ -37,13 +38,11 @@ export default function ProfilePage() {
 
   const fetchProfile = async () => {
     try {
-      // user login dari localStorage
       const storedUser = localStorage.getItem("user");
       if (!storedUser) return;
 
       const loginUser = JSON.parse(storedUser);
 
-      // ambil semua users
       const res = await api.get("/users");
 
       const foundUser = res.data.find(
@@ -113,13 +112,13 @@ export default function ProfilePage() {
 
               {/* Info */}
               <div className="space-y-4 mt-4">
+                {/* EMAIL (GANTI TANGGAL LAHIR) */}
                 <div>
                   <label className="text-sm font-medium text-gray-600">
-                    Tanggal Lahir
+                    Email
                   </label>
                   <Input
-                    type="date"
-                    value=""
+                    value={user?.email || "-"}
                     readOnly
                     className="mt-1 border-gray-300 rounded-lg"
                   />
